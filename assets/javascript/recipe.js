@@ -5,6 +5,12 @@
 // Show results on right side (col-lg-8)
 // Enable user to click on the recipe header and find full recipe
 // Add a bunch of css because why not?
+    // Css to do list
+    // Choose font
+    // Change header/footer/title colors
+
+
+
 
 // API Documentation (for easy reference)
 
@@ -22,10 +28,28 @@
  page: (optional) Used to get additional results
  Get Recipe
  key: API Key
- rId: Id of desired recipe as returned by Search Query */
+ rId: Id of desired recipe as returned by Search Query
+
+
+ Request: http://food2fork.com/api/search?key={API_KEY}&q=shredded%20chicken*/
+
+// Document ready function
+$(document).ready (function() {
 
 
 
-var recipe = $(this).attr("data-recipe");
-var queryURL = "https://food2fork.com/api/search?q=" + recipe + "&api_key=404bedc61bdcf36a33ddcac7ad6058ae";
+$(".search").on("click", function(){
+
+    event.preventDefault();
+
+    console.log("ready");
+
+    var recipe = $("#user-input").val();
+    var queryURL = "https://food2fork.com/api/search?key=404bedc61bdcf36a33ddcac7ad6058ae&q=" +  recipe;
+    console.log(recipe);
+    console.log(queryURL);
+
+});
+
+});
 
